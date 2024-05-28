@@ -5,12 +5,15 @@ import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
 import { ClientesService } from './clientes/./clientes.service';
 import { AppRoutingModule } from './app.routes'
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
+import { FakerApiService } from './person/fakerApi.service';
 
 
 export const appConfig: ApplicationConfig = {
   providers:[ provideRouter(routes),
     provideHttpClient(withFetch()),
+    FakerApiService,
+    HttpClient,
     AppRoutingModule,
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),

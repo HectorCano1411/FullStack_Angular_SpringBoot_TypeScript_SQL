@@ -1,0 +1,27 @@
+<div>
+  <h1>Listado de Personas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Teléfono</th>
+        <th>Fecha de Nacimiento</th>
+        <th>Género</th>
+        <th>Dirección</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let person of persons">
+        <td>{{ person.firstname }} {{ person.lastname }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.phone }}</td>
+        <td>{{ person.birthday }}</td>
+        <td>{{ person.gender }}</td>
+        <td>
+          {{ person.address.streetName }} {{ person.address.buildingNumber }}, {{ person.address.city }}, {{ person.address.country }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

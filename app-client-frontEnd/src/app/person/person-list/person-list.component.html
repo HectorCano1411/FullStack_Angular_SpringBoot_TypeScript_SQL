@@ -1,0 +1,43 @@
+<p>person-list works!</p>
+<!-- person-list.component.html -->
+
+<div>
+    <h1>Listado de Personas</h1>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Email</th>
+          <th>Teléfono</th>
+          <th>birthday</th>
+          <th>gender</th>
+          <th>address</th>
+          <th>website</th>
+          <th>image</th>
+          <!-- Agrega más encabezados según sea necesario -->
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let person of persons">
+          <td>{{ person.id }}</td>
+          <td>{{ person.firstname }}</td>
+          <td>{{ person.lastname }}</td>
+          <td>{{ person.email }}</td>
+          <td>{{ person.phone }}</td>
+          <td>{{ person.birthday }}</td>
+          <td>{{ person.gender }}</td>
+          <td>{{ person.address }}</td>
+          <td>{{ person.website }}</td>
+          <td>{{ person.image }}</td>
+          <!-- Agrega más celdas según sea necesario -->
+        </tr>
+      </tbody>
+    </table>
+  
+    <!-- Agrega paginación aquí -->
+  
+  </div>
+  

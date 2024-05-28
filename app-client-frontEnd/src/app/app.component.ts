@@ -10,6 +10,8 @@ import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './clientes/form.component';
+import { PersonListComponent } from './person/person-list/person-list.component';
+import { PersonComponent } from './person/person.component';
 
 
 
@@ -17,7 +19,7 @@ import { FormComponent } from './clientes/form.component';
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent, DirectivaComponent,
-           ClientesComponent,FormComponent],
+           ClientesComponent,FormComponent,PersonListComponent,PersonComponent,],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   animations: [ slideInAnimation ]

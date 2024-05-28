@@ -11,6 +11,9 @@ import { FormsModule } from '@angular/forms';  // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes'; 
+import { PersonService } from './person/person.service';
+import { PersonListComponent } from './person/person-list/person-list.component';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -33,6 +36,7 @@ import { routes } from './app.routes';
         FormsModule,  
         ReactiveFormsModule,
         RouterModule.forRoot(routes), 
+        PersonListComponent
 
     ],
     // prividers: [],
