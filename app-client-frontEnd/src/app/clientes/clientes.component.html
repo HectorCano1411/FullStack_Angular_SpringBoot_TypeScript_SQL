@@ -7,16 +7,20 @@
         <div class="my-2 text-left " >
             <button class="btn btn-rouded btn-primary" type="button" [routerLink]="['/clientes/form']" >Crear Cliente</button>
         </div>
+        
       <table class="table table table-dark table-striped">
         <thead>
             <tr>
-                <th>id</th>
-                <th>nombre</th>
-                <th>apellido</th>
-                <th>email</th>
-                <th>fecha</th>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>APELLIDO</th>
+                <th>EMAIL</th>
+                <th>FECHA</th>
                 <th>
-                    editar
+                    EDITAR
+                </th>
+                <th>
+                    ELIMINAR
                 </th>
             </tr>
         </thead>
@@ -29,6 +33,9 @@
                 <td> {{cliente.createAt}} </td>
                 <td>
                     <button type="button" name="button" [routerLink]="['/clientes/form', cliente.id]" class="btn btn-primary" >Editar</button>
+                </td>    
+                <td>
+                    <button type="button" class="btn btn-danger" (click)="delete(cliente)">Eliminar</button>
                 </td>    
 
             </tr>
