@@ -8,25 +8,35 @@ import { RouterLinkActive } from '@angular/router';
 import swal from 'sweetalert2';
 import Swal from 'sweetalert2';
 
-
 @Component({
   selector: 'app-clientes',
   standalone: true,
-  imports: [CommonModule,RouterOutlet, RouterLink, RouterLinkActive],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './clientes.component.html',
   styleUrl: './clientes.component.css'
 })
-export class ClientesComponent  implements OnInit{
+export class ClientesComponent implements OnInit {
 
-   clientes: Cliente[] = [];
-  
-  constructor(private clientesService: ClientesService) {}
+  clientes: Cliente[] = [];
+  loading: boolean = false; // Variable para controlar la carga de datos
+  error: string | null = null; // Variable para almacenar mensajes de error
 
-  ngOnInit(){
+  constructor(private clientesService: ClientesService) { }
+
+  ngOnInit() {
+    this.loading = true; // Inicia la carga de datos
     this.clientesService.getClientes().subscribe(
-      clientes => this.clientes = clientes);
-    
+      clientes => {
+        this.clientes = clientes;
+        this.loading = false; // Finaliza la carga de datos con éxito
+      },
+      error => {
+        this.loading = false; // Finaliza la carga de datos con error
+        this.error = 'Error al cargar clientes'; // Almacena el mensaje de error
+      }
+    );
   }
+
   delete(cliente: Cliente): void {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -52,6 +62,13 @@ export class ClientesComponent  implements OnInit{
             'Cliente Eliminado!',
             `Cliente ${cliente.nombre} ${cliente.apellido} eliminado con éxito.`,
             'success'
+          );
+        }, error => {
+          // Manejo de errores al eliminar cliente
+          swalWithBootstrapButtons.fire(
+            'Error',
+            'Error al eliminar cliente',
+            'error'
           );
         });
       } else if (result.dismiss === Swal.DismissReason.cancel) {

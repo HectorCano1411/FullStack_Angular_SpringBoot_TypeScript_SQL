@@ -16,7 +16,6 @@ export const routes: Routes = [
   { path: 'clientes/:id', component: ClienteDetalleComponent },
   { path: 'clientes/form/:id', component: FormComponent },
   { path: 'persons', component: PersonComponent },
-  
   { path: '', redirectTo: '/clie', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
