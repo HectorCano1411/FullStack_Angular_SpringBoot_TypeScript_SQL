@@ -1,0 +1,17 @@
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  
+  .page-item.disabled .page-link {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  .page-item.active .page-link {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: white;
+  }
+  

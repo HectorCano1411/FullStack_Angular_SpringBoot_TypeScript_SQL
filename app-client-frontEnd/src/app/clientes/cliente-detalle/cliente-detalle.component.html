@@ -1,0 +1,21 @@
+<div *ngIf="cliente" class="container mt-5">
+  <h2 class="text-center mb-4">Detalle del Cliente</h2>
+  <div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+      <h5 class="card-title mb-0">{{ cliente.nombre }} {{ cliente.apellido }}</h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><strong>ID:</strong> {{ cliente.id }}</p>
+      <p class="card-text"><strong>Email:</strong> {{ cliente.email }}</p>
+      <p class="card-text"><strong>Creado en:</strong> {{ cliente.createAt | date }}</p>
+    </div>
+  </div>
+  <div class="text-center mt-4">
+    <a [routerLink]="['/clientes']" class="btn btn-primary">Volver</a>
+  </div>
+</div>
+<div *ngIf="!cliente" class="container mt-5">
+  <div class="alert alert-warning text-center" role="alert">
+    Cliente no encontrado.
+  </div>
+</div>

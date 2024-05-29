@@ -1,19 +1,21 @@
 import  { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { DirectivaComponent } from './directiva/directiva.component';
 import { ClientesComponent } from './clientes/clientes.component';
-import { FormComponent } from './clientes/form.component';
+import { FormComponent } from './clientes/form/form.component';
 import { FormsModule } from '@angular/forms';  // Importa FormsModule
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { routes } from './app.routes'; 
-import { PersonService } from './person/person.service';
 import { PersonListComponent } from './person/person-list/person-list.component';
-import { HttpClient } from '@angular/common/http';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { PaginacionComponent } from './paginacion/paginacion.component';
+import { ClienteDetalleComponent } from './clientes/cliente-detalle/cliente-detalle.component';
+
 
 
 
@@ -36,13 +38,17 @@ import { HttpClient } from '@angular/common/http';
         FormsModule,  
         ReactiveFormsModule,
         RouterModule.forRoot(routes), 
-        PersonListComponent
-
+        PersonListComponent,
+        MatPaginatorModule,
+        PaginacionComponent,
+        ClienteDetalleComponent,
+        
     ],
     // prividers: [],
-    bootstrap: []
-
+    bootstrap: [],
+    
+    schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-
+    
 
 export class AppModule {}

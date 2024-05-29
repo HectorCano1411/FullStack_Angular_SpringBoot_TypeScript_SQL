@@ -1,45 +1,36 @@
-
-
 <div class="card border-primary mb-3" style="max-width:100rem;">
     <div class="card-header">Clientes</div>
     <div class="card-body text-primary">
-      <h5 class="card-title text-center">Listado de Clientes</h5>
+        <h5 class="card-title text-center">Listado de Clientes</h5>
         <div class="my-2 text-left " >
             <button class="btn btn-rouded btn-primary" type="button" [routerLink]="['/clientes/form']" >Crear Cliente</button>
         </div>
         
-      <table class="table table table-dark table-striped">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Nombre</th>
-                <th>APELLIDO</th>
-                <th>EMAIL</th>
-                <th>FECHA</th>
-                <th>
-                    EDITAR
-                </th>
-                <th>
-                    ELIMINAR
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let cliente of clientes">
-                <td> {{cliente.id}} </td>
-                <td> {{cliente.nombre}} </td>
-                <td > {{cliente.apellido}} </td>
-                <td> {{cliente.email}} </td>
-                <td> {{cliente.createAt}} </td>
-                <td>
-                    <button type="button" name="button" [routerLink]="['/clientes/form', cliente.id]" class="btn btn-primary" >Editar</button>
-                </td>    
-                <td>
-                    <button type="button" class="btn btn-danger" (click)="delete(cliente)">Eliminar</button>
-                </td>    
-
-            </tr>
-            
-        </tbody>
-      </table>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Email</th>
+                    <th>Fecha</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let cliente of clientes">
+                    <td>{{cliente.id}}</td>
+                    <td>{{cliente.nombre}}</td>
+                    <td>{{cliente.apellido}}</td>
+                    <td>{{cliente.email}}</td>
+                    <td>{{cliente.createAt}}</td>
+                    <td>
+                        <button type="button" [routerLink]="['/clientes/form', cliente.id]" class="btn btn-primary">Editar</button>
+                        <button type="button" class="btn btn-danger" (click)="delete(cliente)">Eliminar</button>
+                        <button type="button" [routerLink]="['/clientes', cliente.id]" class="btn btn-info">Ver Detalle</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

@@ -3,15 +3,17 @@ import { DirectivaComponent } from './directiva/directiva.component';
 import { ClientesComponent } from './clientes/clientes.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { NgModule } from '@angular/core';
-import { FormComponent } from './clientes/form.component';
+import { FormComponent } from './clientes/form/form.component';
 import { PersonListComponent } from './person/person-list/person-list.component';
 import { PersonComponent } from './person/person.component';
+import { ClienteDetalleComponent } from './clientes/cliente-detalle/cliente-detalle.component';
 
 var console
 export const routes: Routes = [
   { path: 'directiva', component: DirectivaComponent },
   { path: 'clientes', component: ClientesComponent },
   { path: 'clientes/form', component: FormComponent },
+  { path: 'clientes/:id', component: ClienteDetalleComponent },
   { path: 'clientes/form/:id', component: FormComponent },
   { path: 'persons', component: PersonComponent },
   
