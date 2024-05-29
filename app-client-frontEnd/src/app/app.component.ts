@@ -15,11 +15,13 @@ import { PersonComponent } from './person/person.component';
 
 
 
+
+
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, HeaderComponent, FooterComponent, DirectivaComponent,
-           ClientesComponent,FormComponent,PersonListComponent,PersonComponent,],
+           ClientesComponent,FormComponent,PersonComponent,PersonListComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   animations: [ slideInAnimation ]

@@ -9,12 +9,12 @@ import { Person } from './person.model';
 })
 export class PersonService {
 
-  // private baseUrl = 'http://localhost:8080/api/persons';
+  private baseUrl = 'http://localhost:8080/api/persons';
 
   constructor(private http: HttpClient) { }
 
   getAllPersons(): any {
-    // return this.http.get<Person[]>(this.baseUrl);
+    return this.http.get<Person[]>(this.baseUrl);
     return null
   }
 }

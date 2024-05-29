@@ -7,6 +7,7 @@ import { ClientesService } from './clientes/./clientes.service';
 import { AppRoutingModule } from './app.routes'
 import { HttpClient, provideHttpClient, withFetch } from '@angular/common/http';
 import { FakerApiService } from './person/fakerApi.service';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 
 export const appConfig: ApplicationConfig = {
@@ -18,6 +19,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideClientHydration(),
     LoggerService,
-    ClientesService
+    ClientesService, provideAnimationsAsync()
 ]
 };

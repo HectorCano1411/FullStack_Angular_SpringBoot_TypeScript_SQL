@@ -1,6 +1,7 @@
-<div>
-  <h1>Listado de Personas</h1>
+<div class="table-container" (click)="openModal()">
+  <h3 class="text-center" >Listado de Personas</h3>
   <table>
+    <!-- Encabezados de la tabla -->
     <thead>
       <tr>
         <th>Nombre</th>
@@ -12,16 +13,23 @@
       </tr>
     </thead>
     <tbody>
+      <!-- Llenar la tabla con datos de personas -->
       <tr *ngFor="let person of persons">
         <td>{{ person.firstname }} {{ person.lastname }}</td>
         <td>{{ person.email }}</td>
         <td>{{ person.phone }}</td>
         <td>{{ person.birthday }}</td>
         <td>{{ person.gender }}</td>
-        <td>
-          {{ person.address.streetName }} {{ person.address.buildingNumber }}, {{ person.address.city }}, {{ person.address.country }}
-        </td>
+        <td>{{ person.address.streetName }} {{ person.address.buildingNumber }}, {{ person.address.city }}, {{ person.address.country }}</td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<!-- Modal -->
+<div class="modal" [style.display]="modalOpen ? 'block' : 'none'">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Contenido del modal...</p>
+  </div>
 </div>

@@ -8,24 +8,31 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './person.component.html',
+  styleUrl: './person.component.css',
 })
 export class PersonComponent implements OnInit {
-
-  persons: any;
+  persons: Person[] = []; // Utiliza el modelo Person para tipar el array de personas
+  modalOpen: boolean = false;
 
   constructor(private fakerApiService: FakerApiService) { }
-  ngOnInit(): void {     this.fakerApiService.getPersons(10, 'male', '2005-01-01').subscribe(
-           reponse => {this.persons = reponse.data;         
-            console.log(this.persons);},
-            error => {console.error('Error al obtener los datos', error);});}
 
-  // ngOnInit(): void {
-  //   this.getPersons();
-  //   console.log('personas,', this.persons)
-  // }
+  ngOnInit(): void {
+    this.fakerApiService.getPersons(20, 'male', '2005-01-01').subscribe(
+      response => {
+        // Mapea los datos de la respuesta a objetos de tipo Person
+        this.persons = response.data.map((data: any) => new Person(data));
+        // console.log(this.persons);
+      },
+      error => {
+        console.error('Error al obtener los datos', error);
+      });
+  }
 
-  // getPersons(): void {
-  //   this.fakerApiService.getPersons(10, 'male', '2005-01-01')
-  //     .subscribe(personsResponse => this.persons = personsResponse.data);
-  // }
+  openModal() {
+    this.modalOpen = true;
+  }
+
+  closeModal() {
+    this.modalOpen = false;
+  }
 }

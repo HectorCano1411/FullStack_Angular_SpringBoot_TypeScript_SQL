@@ -1,0 +1,37 @@
+.table-container {
+    transition: transform 0.3s ease-in-out;
+    background-color: #cfe2ff; /* Color azul claro */
+  }
+  
+  .table-container:hover {
+    transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse */
+  }
+  
+  .modal {
+    display: none; /* Oculta el modal por defecto */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-80%, 80%);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    transition: opacity 0.3s ease-in-out; /* Agrega una transición de opacidad */
+  }
+  
+  .modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .close:hover {
+    color: red; /* Cambia de color al pasar el mouse */
+  }
+  
