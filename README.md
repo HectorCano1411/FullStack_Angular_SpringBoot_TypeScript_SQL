@@ -73,11 +73,14 @@ El archivo `package.json` contiene todas las dependencias del proyecto de Angula
 ---
 ## Uso de Especificación de API Rest
 
-El proyecto utiliza OpenAPI para especificar la API Rest. La especificación se encuentra disponible en el siguiente enlace: [OpenAPI Specification]([ruta/a/especificacion/openapi](http://localhost:8080/v3/api-docs)).
+El proyecto utiliza OpenAPI para especificar la API Rest. La especificación se encuentra disponible en el siguiente enlace: [OpenAPI Specification]([ruta/a/especificacion/openapi]
+(http://localhost:8080/v3/api-docs)).
+[http://localhost:8080/v3/api-docs](http://localhost:8080/v3/api-docs)
 
 ### Implementación de servicios Api REST
 
 Los servicios de la API REST han sido implementados de acuerdo con la especificación OpenAPI. Se ha utilizado Swagger UI como componente de publicación basado en código para visualizar y probar la API. Puedes acceder a Swagger UI en el siguiente enlace: [Swagger UI]([ruta/a/swagger/ui](http://localhost:8080/swagger-ui/index.html)).
+ [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
 ### Consumo de API Externa
 
